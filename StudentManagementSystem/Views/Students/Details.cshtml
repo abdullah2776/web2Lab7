@@ -1,0 +1,57 @@
+﻿@model StudentManagementSystem.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <!-- Header -->
+                <div class="card-header bg-info text-white rounded-top-4">
+                    <h4 class="mb-0">👤 Student Details</h4>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body p-4">
+                    <dl class="row">
+
+                        <dt class="col-sm-4">Full Name</dt>
+                        <dd class="col-sm-8 fw-semibold">@Model.FullName</dd>
+
+                        <dt class="col-sm-4">Student Number</dt>
+                        <dd class="col-sm-8">@Model.StudentNumber</dd>
+
+                        <dt class="col-sm-4">Email</dt>
+                        <dd class="col-sm-8">@Model.Email</dd>
+
+                        <dt class="col-sm-4">Program</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-secondary">
+                                @Model.Program
+                            </span>
+                        </dd>
+
+                    </dl>
+                </div>
+
+                <!-- Footer -->
+                <div class="card-footer bg-light d-flex justify-content-between rounded-bottom-4">
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        ← Back to List
+                    </a>
+
+                    <a asp-action="Edit" asp-route-id="@Model.Id"
+                       class="btn btn-info text-white">
+                        ✏ Edit Student
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
